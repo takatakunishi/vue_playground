@@ -1,0 +1,31 @@
+{
+    "name": "occ_vue_practice (Web)",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/usr/src/app",
+    "settings": {
+        "terminal.integrated.defaultProfile.linux":"bash",
+        "terminal.integrated.profiles.linux": {
+            "bash":{
+                "path": "/bin/bash",
+                "args": [
+                    "-l"
+                ]
+            }
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "mhutchie.git-graph",
+                "donjayamanne.githistory",
+                "eamodio.gitlens",
+                "shardulm94.trailing-spaces",
+                "naumovs.color-highlight",
+                "formulahendry.auto-rename-tag",
+                "Vue.volar",
+                "Vue.vscode-typescript-vue-plugin"
+            ]
+        }
+    }
+}

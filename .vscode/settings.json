@@ -1,0 +1,13 @@
+{
+  "eslint.workingDirectories": [
+		"./front"
+	],
+	"[typescript]": {
+		"editor.tabSize": 2,
+		"editor.insertSpaces": true
+	},
+	"[vue]": {
+		"editor.tabSize": 2,
+		"editor.insertSpaces": true
+	}
+}
