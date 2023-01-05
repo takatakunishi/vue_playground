@@ -2,11 +2,14 @@
 import HelloWorld from './components/HelloWorld.vue'
 import Text from './components/atoms/Text/Text.vue'
 import Button from './components/atoms/Button/Button';
+import TodoItem from './components/molecules/TodoItem';
+import TodoList from './components/molecules/TodoList';
 </script>
 
 <template>
   <Text msg="ok"></Text>
   <Button label="hello"></Button>
+  <TodoList ></TodoList>
 </template>
 
 <style scoped>
