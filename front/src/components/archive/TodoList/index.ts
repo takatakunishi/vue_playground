@@ -1,11 +1,11 @@
 import { defineComponent, h, PropType, ref, reactive, Ref, toRefs, toRef } from "vue";
 import type { Item } from "../TodoItem";
-import TodoListView from "./TodoListView.vue";
+import TodoListViewVue from "./TodoListView.vue";
 
 type TodoItems = {
   items: Ref<Item[]>
   changeDone: (item:Item) => void
-  remove: (item:Item) => void
+  // remove: (item:Item) => void
 }
 
 const createTodos = (): TodoItems => {
@@ -14,30 +14,22 @@ const createTodos = (): TodoItems => {
     const index = items.value.indexOf(item)
     items.value[index].isDone = !items.value[index].isDone
   }
-  const remove = (item:Item) => {
-    const index = items.value.indexOf(item)
-    // const new = items.value
-    items.value.splice(index,1)
-    console.log("削除",{item})
-  }
-  return {items, changeDone, remove}
+  return {items, changeDone}
 }
 
 export default defineComponent({
   name:"TodoList",
   setup() {
-    const {items, changeDone, remove} = createTodos()
+    const {items, changeDone} = createTodos()
     return {
-      items:items,
-      changeDone,
-      remove
+      items:items.value,
+      changeDone
     }
   },
   render(){
-    return h(TodoListView, {
+    return h(TodoListViewVue, {
       items:this.items,
-      changeDone:this.changeDone,
-      remove:this.remove
+      changeDone:this.changeDone
     })
   }
 })

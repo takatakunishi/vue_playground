@@ -1,24 +1,15 @@
+
+<script setup lang="ts">
+import type { Item } from ".";
+import Button from "../../atoms/Button/Button";
+const props = defineProps<{
+  item:Item,
+  chengeDone:() => void,
+  remove:() => void
+}>()
+</script>
+
 <template>
   <li @click="chengeDone">{{ item.title }}:{{ item.description }} => {{ item.isDone ? "Done" : "Todo" }}</li>
+  <Button :label="'削除'" :click="remove" ></Button>
 </template>
-
-<script lang="ts">
-import {defineComponent, PropType} from "vue"
-import type { Item } from ".";
-export default defineComponent({
-  name:"TodoItem",
-  props:{
-    item: {
-      type: Object as PropType<Item>,
-      required:true
-    },
-    chengeDone: {
-      type: Function as PropType<() => void>,
-      required: true
-    }
-  },
-  setup(props) {
-    return {chengeDone: props.chengeDone}
-  },
-})
-</script>

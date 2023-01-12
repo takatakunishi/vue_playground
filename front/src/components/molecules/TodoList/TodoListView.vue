@@ -1,29 +1,12 @@
-<script lang="ts">
-import {defineComponent, PropType, Ref} from "vue"
+<script lang="ts" setup>
 import type {Item} from "../TodoItem"
 import TodoItem from "../TodoItem"
 
-export default defineComponent({
-  name:"TodoListView",
-  components:{
-    TodoItem
-  },
-  props:{
-    items: {
-      type: Object as PropType<Item[]>,
-      required: true
-    },
-    changeDone: {
-      type: Object as PropType<(item: Item) => void>,
-      required: true
-    }
-  },
-  setup(props) {
-    return ({
-      changeDone:props.changeDone,
-    })
-  }
-})
+defineProps<{
+  items: Item[],
+  changeDone: (item: Item) => void,
+  remove: (item: Item) => void
+}>()
 </script>
 
 <template>
@@ -31,6 +14,6 @@ export default defineComponent({
     件数
   </div>
   <ul>
-    <TodoItem v-for="item in items" :item="item" :change-done="()=>changeDone(item)"></TodoItem>
+    <TodoItem v-for="item in items" :item="item" :change-done="()=>changeDone(item)" :remove="() => remove(item)"></TodoItem>
   </ul>
 </template>

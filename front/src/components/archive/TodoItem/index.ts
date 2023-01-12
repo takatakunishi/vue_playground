@@ -1,4 +1,4 @@
-import { defineComponent, h, PropType } from "vue"
+import { defineComponent, h, mergeProps, PropType, Ref } from "vue"
 import TodoItemView from "./TodoItemView.vue"
 
 export type Item = {
@@ -17,24 +17,18 @@ export default defineComponent({
     changeDone: {
       type: Function as PropType<() => void>,
       required: true
-    },
-    remove: {
-      type: Function as PropType<() => void>,
-      required: true
-    },
+    }
   },
   setup(props) {
     return {
       item:props.item,
-      chengeDone: props.changeDone,
-      remove:props.remove
+      chengeDone: props.changeDone
     }
   },
   render(){
     return h(TodoItemView, {
       item: this.item,
-      chengeDone:this.chengeDone,
-      remove:this.remove
+      chengeDone:this.chengeDone
     })
   }
 })

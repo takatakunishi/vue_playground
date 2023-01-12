@@ -1,4 +1,4 @@
-import { defineComponent, h } from "vue";
+import { defineComponent, h, PropType } from "vue";
 
 import ButtonView from "./ButtonView.vue"
 
@@ -8,15 +8,16 @@ export default defineComponent({
         label:{
             type:String,
             required: true
+        },
+        click:{
+            type:Function as PropType<() =>void>,
+            required:true
         }
     },
     setup(props){
-        const click = () => {
-            console.log("clicked")
-        }
         return {
             label:props.label,
-            click
+            click:props.click
         }
     },
     render(){
