@@ -10,9 +10,18 @@ export default defineComponent({
   },
   props:{
     items: {
-      type: Array as Ref<Item[]>,
+      type: Object as PropType<Item[]>,
+      required: true
+    },
+    changeDone: {
+      type: Object as PropType<(item: Item) => void>,
       required: true
     }
+  },
+  setup(props) {
+    return ({
+      changeDone:props.changeDone,
+    })
   }
 })
 </script>
@@ -22,7 +31,6 @@ export default defineComponent({
     件数
   </div>
   <ul>
-    <TodoItem v-for="item in items" :item="item"></TodoItem>
+    <TodoItem v-for="item in items" :item="item" :change-done="()=>changeDone(item)"></TodoItem>
   </ul>
-  go
 </template>

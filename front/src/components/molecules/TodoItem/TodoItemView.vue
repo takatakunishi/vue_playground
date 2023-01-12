@@ -13,16 +13,12 @@ export default defineComponent({
       required:true
     },
     chengeDone: {
-      type: Function,
+      type: Function as PropType<() => void>,
       required: true
     }
   },
   setup(props) {
-    const chengeDone = () => {
-      props.chengeDone()
-    }
-    return {chengeDone}
+    return {chengeDone: props.chengeDone}
   },
 })
-
 </script>

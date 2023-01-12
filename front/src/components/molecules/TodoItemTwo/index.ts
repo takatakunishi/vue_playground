@@ -1,5 +1,5 @@
 import { defineComponent, h, mergeProps, PropType, Ref } from "vue"
-import TodoItemView from "./TodoItemView.vue"
+import TodoItemTwoView from "./TodoItemTwoView.vue"
 
 export type Item = {
   title:string,
@@ -8,7 +8,7 @@ export type Item = {
 }
 
 export default defineComponent({
-  name: 'TodoItem',
+  name: 'TodoItemTwo',
   props: {
     item:{
       type: Object as PropType<Item>,
@@ -26,7 +26,7 @@ export default defineComponent({
     }
   },
   render(){
-    return h(TodoItemView, {
+    return h(TodoItemTwoView, {
       item: this.item,
       chengeDone:this.chengeDone
     })

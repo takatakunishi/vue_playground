@@ -1,6 +1,6 @@
 import { defineComponent, h, PropType, ref, reactive, Ref, toRefs, toRef } from "vue";
-import type { Item } from "../TodoItem";
-import TodoListViewVue from "./TodoListView.vue";
+import type { Item } from "../TodoItemTwo";
+import TodoListTwoView from "./TodoListTwoView.vue";
 
 type TodoItems = {
   items: Ref<Item[]>
@@ -18,7 +18,7 @@ const createTodos = (): TodoItems => {
 }
 
 export default defineComponent({
-  name:"TodoList",
+  name:"TodoListTwo",
   setup() {
     const {items, changeDone} = createTodos()
     return {
@@ -27,7 +27,7 @@ export default defineComponent({
     }
   },
   render(){
-    return h(TodoListViewVue, {
+    return h(TodoListTwoView, {
       items:this.items,
       changeDone:this.changeDone
     })
