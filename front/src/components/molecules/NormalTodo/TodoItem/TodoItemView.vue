@@ -1,15 +1,15 @@
 
 <script setup lang="ts">
 import type { Item } from ".";
-import Button from "../../atoms/Button/Button";
+import Button from "../../../atoms/Button/Button";
 const props = defineProps<{
   item:Item,
-  chengeDone:() => void,
+  changeDone:() => void,
   remove:() => void
 }>()
 </script>
 
 <template>
-  <li @click="chengeDone">{{ item.title }}:{{ item.description }} => {{ item.isDone ? "Done" : "Todo" }}</li>
+  <li @click="changeDone">{{ item.title }}:{{ item.description }} => {{ item.isDone ? "Done" : "Todo" }}</li>
   <Button :label="'削除'" :click="remove" ></Button>
 </template>

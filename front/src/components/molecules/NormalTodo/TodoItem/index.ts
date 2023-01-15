@@ -3,6 +3,7 @@ import TodoItemView from "./TodoItemView.vue"
 
 export type Item = {
   title:string,
+  id:string
   description:string,
   isDone:boolean
 }
@@ -26,15 +27,13 @@ export default defineComponent({
   setup(props) {
     return {
       item:props.item,
-      chengeDone: props.changeDone,
-      remove:props.remove
     }
   },
   render(){
     return h(TodoItemView, {
       item: this.item,
-      chengeDone:this.chengeDone,
-      remove:this.remove
+      changeDone:this.$props.changeDone,
+      remove:this.$props.remove
     })
   }
 })

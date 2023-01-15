@@ -9,5 +9,13 @@
 	"[vue]": {
 		"editor.tabSize": 2,
 		"editor.insertSpaces": true
+	},
+	"[ejs]": {
+		"editor.tabSize": 2,
+		"editor.insertSpaces": true
+	},
+	"[javascript]": {
+		"editor.tabSize": 2,
+		"editor.insertSpaces": true
 	}
 }

@@ -4,7 +4,7 @@ import TodoItem from "../TodoItem"
 
 defineProps<{
   items: Item[],
-  changeDone: (item: Item) => void,
+  changeDone: (index: Item) => void,
   remove: (item: Item) => void
 }>()
 </script>
@@ -14,6 +14,6 @@ defineProps<{
     件数
   </div>
   <ul>
-    <TodoItem v-for="item in items" :item="item" :change-done="()=>changeDone(item)" :remove="() => remove(item)"></TodoItem>
+    <TodoItem v-for="item in items" :item="item" :key="item.id" :change-done="()=>changeDone(item)" :remove="() => remove(item)"></TodoItem>
   </ul>
 </template>

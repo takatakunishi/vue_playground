@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import Text from './components/atoms/Text/Text.vue'
 import Button from './components/atoms/Button/Button';
-import TodoList from "./components/molecules/TodoList"
+import TodoList from "./components/molecules/TodoListProvide"
+import TodoLists from "./components/molecules/NormalTodo/TodoList"
+
 </script>
 
 <template>
-  <Text msg="ok"></Text>
   <TodoList />
+  <TodoLists></TodoLists>
 </template>
 
 <style scoped>

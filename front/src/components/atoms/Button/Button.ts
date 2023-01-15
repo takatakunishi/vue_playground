@@ -14,16 +14,10 @@ export default defineComponent({
             required:true
         }
     },
-    setup(props){
-        return {
-            label:props.label,
-            click:props.click
-        }
-    },
     render(){
         return h(ButtonView, {
-            label:this.label,
-            click:this.click
+            label:this.$props.label,
+            click:this.$props.click
         })
     }
 })
