@@ -10,6 +10,7 @@ const changeCheck = (value: boolean) => {
   checked.value = value
   console.log(value, checked.value)
 }
+const a = 1
 </script>
 
 <template>

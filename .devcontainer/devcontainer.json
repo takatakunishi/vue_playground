@@ -2,7 +2,7 @@
     "name": "occ_vue_practice (Web)",
     "dockerComposeFile": "../docker-compose.yml",
     "service": "app",
-    "workspaceFolder": "/usr/src/app",
+    "workspaceFolder": "/usr/src/app/front",
     "settings": {
         "terminal.integrated.defaultProfile.linux":"bash",
         "terminal.integrated.profiles.linux": {
