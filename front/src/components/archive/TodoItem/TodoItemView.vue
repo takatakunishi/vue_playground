@@ -1,24 +1,27 @@
 <template>
-  <li @click="chengeDone">{{ item.title }}:{{ item.description }} => {{ item.isDone ? "Done" : "Todo" }}</li>
+  <li @click="chengeDone">
+    {{ item.title }}:{{ item.description }} =>
+    {{ item.isDone ? "Done" : "Todo" }}
+  </li>
 </template>
 
 <script lang="ts">
-import {defineComponent, PropType} from "vue"
+import { defineComponent, PropType } from "vue";
 import type { Item } from ".";
 export default defineComponent({
-  name:"TodoItem",
-  props:{
+  name: "TodoItem",
+  props: {
     item: {
       type: Object as PropType<Item>,
-      required:true
+      required: true,
     },
     chengeDone: {
       type: Function as PropType<() => void>,
-      required: true
-    }
+      required: true,
+    },
   },
   setup(props) {
-    return {chengeDone: props.chengeDone}
+    return { chengeDone: props.chengeDone };
   },
-})
+});
 </script>

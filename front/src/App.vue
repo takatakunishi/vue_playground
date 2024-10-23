@@ -1,22 +1,20 @@
 <script setup lang="ts">
-import Button from './components/atoms/Button/Button';
-import TodoList from "./components/molecules/TodoListProvide"
-import TodoLists from "./components/molecules/NormalTodo/TodoList"
-import Checkbox from "./components/Checkbox/index.vue"
-import { ref } from 'vue';
+import TodoList from "./components/molecules/TodoListProvide";
+import TodoLists from "./components/molecules/NormalTodo/TodoList";
+import Checkbox from "./components/Checkbox/index.vue";
+import { ref } from "vue";
 
-const checked = ref(false)
+const checked = ref(false);
 const changeCheck = (value: boolean) => {
-  checked.value = value
-  console.log(value, checked.value)
-}
-const a = 1
+  checked.value = value;
+  console.log(value, checked.value);
+};
 </script>
 
 <template>
   <TodoList />
-  <TodoLists></TodoLists>
-  <Checkbox  @change-check="changeCheck"></Checkbox>
+  <TodoLists />
+  <Checkbox @change-check="changeCheck" />
 </template>
 
 <style scoped>

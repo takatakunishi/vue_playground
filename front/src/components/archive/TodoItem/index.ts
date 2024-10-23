@@ -2,15 +2,15 @@ import { defineComponent, h, mergeProps, PropType, Ref } from "vue"
 import TodoItemView from "./TodoItemView.vue"
 
 export type Item = {
-  title:string,
-  description:string,
-  isDone:boolean
+  title: string,
+  description: string,
+  isDone: boolean
 }
 
 export default defineComponent({
   name: 'TodoItem',
   props: {
-    item:{
+    item: {
       type: Object as PropType<Item>,
       required: true
     },
@@ -21,14 +21,14 @@ export default defineComponent({
   },
   setup(props) {
     return {
-      item:props.item,
+      item: props.item,
       chengeDone: props.changeDone
     }
   },
-  render(){
+  render() {
     return h(TodoItemView, {
       item: this.item,
-      chengeDone:this.chengeDone
+      chengeDone: this.chengeDone
     })
   }
 })
